@@ -1,0 +1,18 @@
+<!-- v. 2/8/15 --- Copyright (c) 2015 Josh Brower, Josh@DefensiveDepth.com -->
+
+<!-- OSSEC Decoder for Sysmon Event ID 1: Process Create
+  -
+  -  OSSEC to Sysmon Fields Mapping:
+  -  user = User
+  -  status = Image
+  -  url = Hash
+  -  extra_data = ParentImage
+-->
+
+<decoder name="sysmon-process">
+<parent>windows</parent>
+<type>windows</type>
+<prematch>INFORMATION\(1\)</prematch>
+<regex offset="after_prematch">Image: (\.*) \s*CommandLine: \.* \s*User: (\.*) \s*LogonGuid: \S* \s*LogonId: \S* \s*TerminalSessionId: \S* \s*IntegrityLevel: \S* \s*HashType: \S* \s*Hash: (\S*) \s*ParentProcessGuid: \S* \s*ParentProcessID: \S* \s*ParentImage: (\.*) \s*ParentCommandLine:</regex>
+<order>status,user,url,data</order>
+</decoder>

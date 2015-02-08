@@ -1,0 +1,27 @@
+<!-- v. 2/8/15 --- Copyright (c) 2015 Josh Brower, Josh@DefensiveDepth.com -->
+
+<!-- Example Rule to detect (by hash) psexec usage - 
+  -  Uses Sysmon Event ID 1 logs & associated decoder.
+  -
+  -  OSSEC to Sysmon (Event ID 1) Fields Mapping:
+  -  user = User
+  -  status = Image
+  -  url = Hash
+  -  extra_data = ParentImage
+  -->
+  
+<rule id="183668" level="12">
+  <if_sid>18100</if_sid>
+  <list field="url">lists/psexec</list>
+  <description>psexec run!</description>
+</rule>
+
+
+<!-- SHA1 hashes for psexec releases 2011 - 2014 - 
+  -  Use in CDB file
+  -->
+  
+cd23b7c9e0edef184930bc8e0ca2264f0608bcb3:psexec_v1.98
+9a46e577206d306d9d2b2ab2f72689e4f5f38fb1:psexec_v2.00
+2edeefb431663f20a36a63c853108e083f4da895:psexec_v2.10
+b5c62d79eda4f7e4b60a9caa5736a3fdc2f1b27e:psexec_v2.11

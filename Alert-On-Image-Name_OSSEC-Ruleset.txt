@@ -1,0 +1,38 @@
+<!-- v. 2/8/15 --- Copyright (c) 2015 Josh Brower, Josh@DefensiveDepth.com -->
+
+<!-- Example Rules to detect (by image name) abnormal user behaviour -
+  -  Uses Sysmon Event ID 1 logs & associated decoder.
+  -
+  -  OSSEC to Sysmon (Event ID 1) Fields Mapping:
+  -  user = User
+  -  status = Image
+  -  url = Hash
+  -  extra_data = ParentImage
+  -->
+
+<rule id="182667" level="12">
+  <if_sid>18100</if_sid>
+  <status>ipconfig.exe</status>
+  <description>ipconfig usage</description>
+</rule>
+
+  
+<rule id="182668" level="12">
+  <if_sid>18100</if_sid>
+  <status>powershell.exe</status>
+  <description>powershell usage</description>
+</rule>
+
+
+<rule id="182669" level="12">
+  <if_sid>18100</if_sid>
+  <status>\cmd.exe</status>
+  <description>cmd usage</description>
+</rule>
+
+
+<rule id="182670" level="12">
+  <if_sid>18100</if_sid>
+  <status>\at.exe</status>
+  <description>at usage</description>
+</rule>
