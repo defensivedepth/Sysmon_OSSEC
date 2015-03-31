@@ -1,6 +1,7 @@
-<!-- v. 2/8/15 --- Copyright (c) 2015 Josh Brower, Josh@DefensiveDepth.com -->
+<!--Maintained by Josh Brower, Josh@DefensiveDepth.com -->
+<!--Licensed under the MIT License: http://opensource.org/licenses/MIT-->
 
-<!-- OSSEC Decoder for Sysmon Event ID 1: Process Create
+<!-- OSSEC Decoder for Sysmon Event ID 1: Process Created
   -
   -  OSSEC to Sysmon Fields Mapping:
   -  user = User
@@ -9,7 +10,7 @@
   -  extra_data = ParentImage
 -->
 
-<decoder name="sysmon-process">
+<decoder name="Sysmon-EventID#1">
 <parent>windows</parent>
 <type>windows</type>
 <prematch>INFORMATION\(1\)</prematch>
