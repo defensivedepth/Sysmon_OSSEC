@@ -1,4 +1,5 @@
-<!-- v. 2/8/15 --- Copyright (c) 2015 Josh Brower, Josh@DefensiveDepth.com -->
+<!--Maintained by Josh Brower, Josh@DefensiveDepth.com -->
+<!--Licensed under the MIT License: http://opensource.org/licenses/MIT-->
 
 <!-- Example Rules to detect (by image name) abnormal user behaviour -
   -  Uses Sysmon Event ID 1 logs & associated decoder.
