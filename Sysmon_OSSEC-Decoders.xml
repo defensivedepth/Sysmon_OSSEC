@@ -8,6 +8,8 @@
   -  status = Image
   -  url = Hash
   -  extra_data = ParentImage
+  -
+  - Compatible with Server 2003/2008/2012
 -->
 
 <decoder name="Sysmon-EventID#1">
