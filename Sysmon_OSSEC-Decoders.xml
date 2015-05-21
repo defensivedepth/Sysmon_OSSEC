@@ -19,3 +19,12 @@
 <regex offset="after_prematch">Image: (\.*) \s*CommandLine: \.* \s*User: (\.*) \s*LogonGuid: \S* \s*LogonId: \S* \s*TerminalSessionId: \S* \s*IntegrityLevel: \.*HashType: \S* \s*Hash: (\S*) \s*ParentProcessGuid: \S* \s*ParentProcessID: \S* \s*ParentImage: (\.*) \s*ParentCommandLine:</regex>
 <order>status,user,url,data</order>
 </decoder>
+
+
+<decoder name="Sysmon3SHA1-EventID#1">
+<parent>windows</parent>
+<type>windows</type>
+<prematch>INFORMATION\(1\)</prematch>
+<regex offset="after_prematch">Image: (\.*) \s*CommandLine: \.* \s*CurrentDirectory: \.* \s*User: (\.*) \s*LogonGuid: \S* \s*LogonId: \.* \s*TerminalSessionId: \.* \s*IntegrityLevel: \.* \s*Hashes: SHA1=(\S*) \s*ParentProcessGuid: \S* \s*ParentProcessId: \S* \s*ParentImage: (\S*) \s*ParentCommandLine: \.*</regex>
+<order>status,user,url,data</order>
+</decoder>
