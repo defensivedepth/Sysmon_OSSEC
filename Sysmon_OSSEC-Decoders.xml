@@ -3,6 +3,8 @@
 
 <!-- OSSEC Decoder for Sysmon Event ID 1: Process Created
   -
+  -Use the appropriate decoder for your version of Sysmon - v1 or v3
+  _
   -  OSSEC to Sysmon Fields Mapping:
   -  user = User
   -  status = Image
@@ -12,10 +14,16 @@
   - Compatible with Server 2003/2008/2012
 -->
 
-<decoder name="Sysmon-EventID#1">
-<parent>windows</parent>
+<decoder name="SysmonV1-EventID#1">
 <type>windows</type>
 <prematch>INFORMATION\(1\)</prematch>
-<regex offset="after_prematch">Image: (\.*) \s*CommandLine: \.* \s*User: (\.*) \s*LogonGuid: \S* \s*LogonId: \S* \s*TerminalSessionId: \S* \s*IntegrityLevel: \.*HashType: \S* \s*Hash: (\S*) \s*ParentProcessGuid: \S* \s*ParentProcessID: \S* \s*ParentImage: (\.*) \s*ParentCommandLine:</regex>
+<regex offset="after_prematch">Image: (\.*) \s*CommandLine: \.* \s*User: (\.*) \s*LogonGuid: \S* \s*LogonId: \S* \s*TerminalSessionId: \S* \s*IntegrityLevel: \S* \s*HashType: \S* \s*Hash: (\S*) \s*ParentProcessGuid: \S* \s*ParentProcessID: \S* \s*ParentImage: (\.*) \s*ParentCommandLine:</regex>
+<order>status,user,url,data</order>
+</decoder>
+
+<decoder name="SysmonV3-EventID#1">
+<type>windows</type>
+<prematch>INFORMATION\(1\)</prematch>
+<regex offset="after_prematch">Image: (\.*) \s*CommandLine: \.* \s*CurrentDirectory: \.* \s*User: (\.*) \s*LogonGuid: \S* \s*LogonId: \S* \s*TerminalSessionId: \S* \s*IntegrityLevel: \S* \s* Hashes: (\S*) \s*ParentProcessGuid: \S* \s*ParentProcessID: \S* \s*ParentImage: (\.*) \s*ParentCommandLine:</regex>
 <order>status,user,url,data</order>
 </decoder>
