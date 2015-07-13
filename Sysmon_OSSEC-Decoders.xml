@@ -14,16 +14,9 @@
   - Compatible with Server 2003/2008/2012
 -->
 
-<decoder name="SysmonV1-EventID#1">
+<decoder name="Sysmon-EventID">
 <type>windows</type>
 <prematch>INFORMATION\(1\)</prematch>
-<regex offset="after_prematch">Image: (\.*) \s*CommandLine: \.* \s*User: (\.*) \s*LogonGuid: \S* \s*LogonId: \S* \s*TerminalSessionId: \S* \s*IntegrityLevel: \S* \s*HashType: \S* \s*Hash: (\S*) \s*ParentProcessGuid: \S* \s*ParentProcessID: \S* \s*ParentImage: (\.*) \s*ParentCommandLine:</regex>
-<order>status,user,url,data</order>
-</decoder>
-
-<decoder name="SysmonV3-EventID#1">
-<type>windows</type>
-<prematch>INFORMATION\(1\)</prematch>
-<regex offset="after_prematch">Image: (\.*) \s*CommandLine: \.* \s*CurrentDirectory: \.* \s*User: (\.*) \s*LogonGuid: \S* \s*LogonId: \S* \s*TerminalSessionId: \S* \s*IntegrityLevel: \S* \s* Hashes: (\S*) \s*ParentProcessGuid: \S* \s*ParentProcessID: \S* \s*ParentImage: (\.*) \s*ParentCommandLine:</regex>
+<regex offset="after_prematch">Image: (\.*)  \s*CommandLine: \.* \s*User: (\.*) \s*LogonGuid: \S* \.*Hash\w*: (\S*) \s*ParentProcessGuid: \S* \s*ParentProcessID: \S* \s*ParentImage: (\.*) \.*</regex>
 <order>status,user,url,data</order>
 </decoder>
