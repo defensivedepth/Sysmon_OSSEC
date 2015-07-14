@@ -17,7 +17,7 @@
 <decoder name="Sysmon-EventID1">
  <type>windows</type>
  <prematch>INFORMATION\(1\)</prematch>
- <regex offset="after_prematch">Image: (\.*)  \s*CommandLine: \.* \s*User: (\.*) \s*LogonGuid:\.*Hashes: SHA1=(\.*)\s*ParentProcessGuid: \.* \s*ParentProcessID: \.* \s*ParentImage: (\.*)Parent\.*$|</regex>
- <regex>Image: (\.*)  \s*CommandLine: \.* \s*User: (\.*) \s*LogonGuid:\.*Hash: (\.*)\s*ParentProcessGuid: \.* \s*ParentProcessID: \.* \s*ParentImage: (\.*)Parent\.*$</regex>
+ <regex offset="after_prematch">Image: (\.*)\s*CommandLine\.*\s*User: (\.*)\s*LogonGuid\.*Hashes: SHA1=(\.*)\s*ParentProcessGuid: \.*\s*ParentProcessID: \.*\s*ParentImage: (\.*)Parent\.*$|</regex>
+ <regex>Image: (\.*)\s*CommandLine\.*\s*User: (\.*)\s*LogonGuid\.*Hash (\.*)\s*ParentProcessGuid: \.*\s*ParentProcessID: \.*\s*ParentImage: (\.*)Parent\.*$</regex>
  <order>status,user,url,data</order>
 </decoder>
