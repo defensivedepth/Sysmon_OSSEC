@@ -3,7 +3,7 @@
 
 <!-- OSSEC Decoder for Sysmon Event ID 1: Process Created
   -
-  -Use the appropriate decoder for your version of Sysmon - v1 or v3
+  -
   _
   -  OSSEC to Sysmon Fields Mapping:
   -  user = User
@@ -11,10 +11,10 @@
   -  url = Hash
   -  extra_data = ParentImage
   -
-  - Compatible with Server 2003/2008/2012
+  - Compatible with Server 2003R2/2008/2012
 -->
 
-<decoder name="Sysmon-EventID">
+<decoder name="Sysmon-EventID1">
  <type>windows</type>
  <prematch>INFORMATION\(1\)</prematch>
  <regex offset="after_prematch">Image: (\.*)  \s*CommandLine: \.* \s*User: (\.*) \s*LogonGuid:\.*Hashes: SHA1=(\.*)\s*ParentProcessGuid: \.* \s*ParentProcessID: \.* \s*ParentImage: (\.*)Parent\.*$|</regex>
