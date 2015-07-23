@@ -12,6 +12,7 @@
   -  extra_data = ParentImage
   -
   - Compatible with Server 2003R2/2008/2012
+  - Compatible with Sysmon 1.0, 2, 3.0, 3.1
 -->
 
 <decoder name="Sysmon-EventID1">
